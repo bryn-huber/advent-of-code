@@ -58,7 +58,9 @@ public class Day01 {
   }
 
   public static String readFile() {
-    Path filePath = Paths.get("src/main/resources/day01_data.txt");
+    Path filePath = Paths.get("../resources/day01_data.txt");
+    // Path filePath = Paths.get("src/main/resources/day01_data.txt");
+    System.out.println("Reading file from: " + filePath.toAbsolutePath());
     try {
       return Files.readString(filePath);
     } catch (IOException e) {
