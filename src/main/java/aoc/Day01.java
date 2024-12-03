@@ -55,6 +55,19 @@ public class Day01 {
       LOGGER.log(System.Logger.Level.INFO, "diff: {0}", diff);
     }
     LOGGER.log(System.Logger.Level.INFO, "sum: {0}", sum);
+
+    int similar = 0;
+
+    for (Integer number : numbers1) {
+      for (Integer number2 : numbers2) {
+        int occurrences = 0;
+        if (number.equals(number2)) {
+          occurrences++;
+        }
+        similar += number*occurrences;
+      }
+    }
+    LOGGER.log(System.Logger.Level.INFO, "similar: {0}", similar);
   }
 
   public static String readFile() {
