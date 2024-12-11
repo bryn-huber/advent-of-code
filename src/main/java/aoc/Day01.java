@@ -1,12 +1,10 @@
 package aoc;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
+
+import aoc.utils.FileHelper;
 
 public class Day01 {
 
@@ -17,7 +15,7 @@ public class Day01 {
     String version = System.getProperty("java.version");
     LOGGER.log(System.Logger.Level.INFO, "Java version: {0}", version);
 
-    String file = readFile();
+    String file = FileHelper.readFile(Day01.class.getSimpleName());
 
     ArrayList<Integer> numbers1 = new ArrayList<>();
     ArrayList<Integer> numbers2 = new ArrayList<>();
@@ -68,18 +66,6 @@ public class Day01 {
       }
     }
     LOGGER.log(System.Logger.Level.INFO, "similar: {0}", similar);
-  }
-
-  public static String readFile() {
-    Path filePath = Paths.get("../resources/day01_data.txt");
-    // Path filePath = Paths.get("src/main/resources/day01_data.txt");
-    System.out.println("Reading file from: " + filePath.toAbsolutePath());
-    try {
-      return Files.readString(filePath);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return null;
   }
 
 }

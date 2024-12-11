@@ -1,13 +1,11 @@
 package aoc;
 
-import java.io.IOException;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Objects;
+
+import aoc.utils.FileHelper;
 
 public class Day02 {
 
@@ -18,7 +16,7 @@ public class Day02 {
     String version = System.getProperty("java.version");
     LOGGER.log(System.Logger.Level.INFO, "Java version: {0}", version);
 
-    String inputData = readFile();
+    String inputData = FileHelper.readFile(Day02.class.getSimpleName());
     // LOGGER.log(System.Logger.Level.INFO, inputData);
 
     // create a list of each row of the input data
@@ -96,18 +94,6 @@ public class Day02 {
       }
     }
     return FALSE;
-  }
-
-  public static String readFile() {
-//    Path filePath = Paths.get("../resources/day02_data.txt");
-    Path filePath = Paths.get("src/main/resources/day02_data.txt");
-//    System.out.println("Reading file from: " + filePath.toAbsolutePath());
-    try {
-      return Files.readString(filePath);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return null;
   }
 
 }
