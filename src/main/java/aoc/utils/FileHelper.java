@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileHelper {
 
@@ -20,6 +22,15 @@ public class FileHelper {
       e.printStackTrace();
     }
     return null;
+  }
+
+  public static List<String> readLinesInFile(Path inputPath) {
+    try {
+      return Files.readAllLines(inputPath);
+    } catch (IOException e) {
+      System.err.format("There was an Error reading the File: %s%n", e);
+      return new ArrayList<>();
+    }
   }
 
 }
