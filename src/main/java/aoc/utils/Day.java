@@ -5,11 +5,11 @@ public class Day {
     private Object part1;
     private Object part2;
     
-    public void setPart1(int part1) {
+    public void setPart1(Object part1) {
         this.part1 = part1;
     }
     
-    public void setPart2(int part2) {
+    public void setPart2(Object part2) {
             this.part2 = part2;
     }
 
