@@ -41,8 +41,12 @@ public class Day05 {
   }
 
   public static int part2(List<String> input) {
-
-    return 0;
+    Map<Integer, List<Integer>> rules = parseRules(input);
+    List<List<Integer>> updates = parseUpdates(input);
+    return updates.stream()
+            .filter(update -> !isValid(rules, update))
+            .mapToInt(update -> orderUpdate(rules, update).get(update.size() / 2))
+            .sum();
   }
 
   private static List<Integer> orderUpdate(Map<Integer, List<Integer>> rules, List<Integer> update) {
@@ -96,7 +100,7 @@ public class Day05 {
               break;
           }
           String[] parts = line.split("\\|");
-          rules.computeIfAbsent(Integer.parseInt(parts[0]), k -> new ArrayList<>()).add(Integer.parseInt(parts[1]));
+          rules.computeIfAbsent(Integer.valueOf(parts[0]), k -> new ArrayList<>()).add(Integer.valueOf(parts[1]));
       }
       return rules;
     }
