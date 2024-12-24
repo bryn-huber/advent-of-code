@@ -21,6 +21,7 @@ public class Day07 {
 
     LOGGER.log(System.Logger.Level.INFO, input);
 
+    day.setName("Bridge Repair");
     day.setPart1(part1(input));
     day.setPart2(part2(input));
 

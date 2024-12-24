@@ -10,16 +10,16 @@ import aoc.utils.FileHelper;
 public class Day11 {
 
   private static final System.Logger LOGGER = System.getLogger(Day11.class.getName());
+  private static final Day day = new Day();
 
   public static void main(String[] args) {
 
     Path filePath = Paths.get("src/main/resources/day11_data.txt");
     List<String> input = FileHelper.readLinesInFile(filePath);
 
-    Day day = new Day();
-
     LOGGER.log(System.Logger.Level.INFO, input);
 
+    day.setName("Plutonian Pebbles");
     day.setPart1(part1(input));
     day.setPart2(part2(input));
 

@@ -1,19 +1,27 @@
 package aoc;
 
-import aoc.utils.Direction;
-import aoc.utils.FileHelper;
+import java.awt.Point;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
-
-import java.awt.*;
-import java.util.*;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 import java.util.function.Predicate;
+
+import aoc.utils.Day;
+import aoc.utils.Direction;
+import aoc.utils.FileHelper;
 
 public class Day04 {
 
   private static final System.Logger LOGGER = System.getLogger(Day04.class.getName());
+  private static final Day day = new Day();
 
   public static void main(String[] args) {
 
@@ -23,6 +31,7 @@ public class Day04 {
     Path filePath = Paths.get("src/main/resources/day04_data.txt");
     List<String> input = FileHelper.readLinesInFile(filePath);
 
+    day.setName("Ceres Search");
     part1(input);
     part2(input);
 

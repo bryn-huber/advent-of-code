@@ -1,14 +1,17 @@
 package aoc;
 
-import aoc.utils.FileHelper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import aoc.utils.Day;
+import aoc.utils.FileHelper;
+
 public class Day03 {
 
   private static final System.Logger LOGGER = System.getLogger(Day03.class.getName());
+  private static final Day day = new Day();
 
   public static void main(String[] args) {
 
@@ -18,6 +21,8 @@ public class Day03 {
     String inputData = FileHelper.readFile(Day03.class.getSimpleName());
 
     LOGGER.log(System.Logger.Level.INFO, inputData);
+
+    day.setName("Mull It Over");
 
     // split by mul pattern
     String pattern = "mul\\((\\d+),(\\d+)\\)";

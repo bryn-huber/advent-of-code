@@ -5,11 +5,13 @@ import static java.lang.Boolean.TRUE;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import aoc.utils.Day;
 import aoc.utils.FileHelper;
 
 public class Day02 {
 
   private static final System.Logger LOGGER = System.getLogger(Day02.class.getName());
+  private static final Day day = new Day();
 
   public static void main(String[] args) {
 
@@ -18,6 +20,8 @@ public class Day02 {
 
     String inputData = FileHelper.readFile(Day02.class.getSimpleName());
     // LOGGER.log(System.Logger.Level.INFO, inputData);
+
+    day.setName("Red-Nosed Reports");
 
     // create a list of each row of the input data
     ArrayList<String> reports = new ArrayList<>();

@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
 
+import aoc.utils.Day;
 import aoc.utils.FileHelper;
 
 public class Day01 {
 
   private static final System.Logger LOGGER = System.getLogger(Day01.class.getName());
+  private static final Day day = new Day();
 
   public static void main(String[] args) {
 
@@ -16,6 +18,8 @@ public class Day01 {
     LOGGER.log(System.Logger.Level.INFO, "Java version: {0}", version);
 
     String file = FileHelper.readFile(Day01.class.getSimpleName());
+
+    day.setName("Historian Hysteria");
 
     ArrayList<Integer> numbers1 = new ArrayList<>();
     ArrayList<Integer> numbers2 = new ArrayList<>();
