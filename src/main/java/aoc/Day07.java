@@ -36,7 +36,9 @@ public class Day07 {
   // check if number is bigger than target number
   // evaluate until end of numbers or target is smaller than current number
 
-  // part two add concatenate
+  // part two add concatenate operation
+  // use of boolean
+  // evaluate use extra operation to concatenate
 
   public static long part1(List<String> input) {
     long sumValid = 0;
@@ -51,7 +53,15 @@ public class Day07 {
 }
 
 public static long part2(List<String> input) {
-    return 0;
+  long sumValid = 0;
+  for (String line : input) {
+      var parts = line.split(": ");
+      long result = Long.parseLong(parts[0]);
+      if (isValid(result, parts[1], true)) {
+          sumValid += result;
+      }
+  }
+  return sumValid;
 }
 
 private static boolean isValid(long result, String part, boolean addConcatenate) {
